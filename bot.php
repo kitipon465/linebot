@@ -19,7 +19,8 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $reply_message = '';
         $reply_token = $event['replyToken'];
-
+If ($event['type'] == 'beacon')  {   
+    
         $text = $event['message']['text'];
         $data = [
             'replyToken' => $reply_token,
@@ -33,7 +34,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         echo "Result: ".$send_result."\r\n";
     }
 }
-
+}
 echo "OK";
 
 
